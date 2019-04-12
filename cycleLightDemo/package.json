@@ -1,0 +1,15 @@
+{
+    "name": "cycleLightDemo",
+    "version": "0.0.1",
+    "description": "Demo for cycling light on raspberry pi",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "author": "Casey Dierking",
+    "license": "MIT",
+    "dependencies":{
+        "onoff":"^3.2.1"
+    }
+}
