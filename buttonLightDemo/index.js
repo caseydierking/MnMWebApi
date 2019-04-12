@@ -4,12 +4,6 @@ const light = new gpio(12, 'out');
 const button = new gpio(26,'in','both');
 
 
-const sleep = (howLong) => {
-    return new Promise((resolve) => {
-        setTimeout(resolve, howLong)
-    })
-}
-
 button.watch((err, value) => {
     if (err){
         console.log("An error has occured.");
@@ -18,9 +12,9 @@ button.watch((err, value) => {
     //Alert user button has been clicked.
     console.log("Button clicked!");
     light.writeSync(1);
-    await sleep(3000);
-    light.writeSync(0);
-})
+
+    setTimeout(function(){light.writeSync(0)}, 1000)
+});
 
 const lightOff = () => {
     light.writeSync(0)
@@ -34,4 +28,3 @@ process.on('SIGINT', () => {
 })
 
 lightOff();
-cycleLight();
