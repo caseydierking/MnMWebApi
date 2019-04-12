@@ -1,4 +1,4 @@
-const gpio = require('onoff').gpio
+const gpio = require('onoff').Gpio
 const light = new gpio(12, 'out');
 
 
